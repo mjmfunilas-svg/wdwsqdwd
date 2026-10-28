@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RtR Core Intern Hub</title>
+    <!-- Tailwind CSS for modern, secure, and clean styling -->
+    <script src="https://jsdelivr.net"></script>
+    <style>
+        .hidden-card { display: none !important; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-blue-900 text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-600 p-2 rounded-lg font-bold tracking-wider">RtR</div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight">Core Intern Hub</h1>
+                    <p class="text-xs text-blue-200">Your Front Door to Guides, Systems, and Support</p>
+                </div>
+            </div>
+            <!-- Live Search Bar component -->
+            <div class="relative w-full sm:w-80">
+                <input type="text" id="hubSearch" onkeyup="filterHub()" placeholder="Search fixes, guides, lists..." class="w-full bg-blue-800 text-white placeholder-blue-300 pl-10 pr-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 border border-transparent transition-all">
+                <span class="absolute left-3 top-2.5 text-blue-300">🔍</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Left 2 Columns: Resources & Quick Links -->
+        <div class="lg:col-span-2 space-y-8">
+            
+            <!-- Quick Links / "The Front Door" Section -->
+            <section>
+                <h2 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">📁 Core Document Directories <span class="text-xs font-normal text-slate-500">(Requires Corporate Login)</span></h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="https://sharepoint.com" target="_blank" class="flex items-center p-4 bg-white rounded-xl shadow-sm border border-slate-200 hover:border-blue-500 hover:shadow-md transition-all group">
+                        <div class="p-3 bg-emerald-50 text-emerald-600 rounded-lg text-2xl mr-4 group-hover:bg-emerald-100">📋</div>
+                        <div>
+                            <h3 class="font-semibold text-slate-800">Shared Process Guides</h3>
+                            <p class="text-xs text-slate-500">Official standard operating procedures on SharePoint.</p>
+                        </div>
+                    </a>
+                    <a href="https://sharepoint.com" target="_blank" class="flex items-center p-4 bg-white rounded-xl shadow-sm border border-slate-200 hover:border-blue-500 hover:shadow-md transition-all group">
+                        <div class="p-3 bg-blue-50 text-blue-600 rounded-lg text-2xl mr-4 group-hover:bg-blue-100">☑️</div>
+                        <div>
+                            <h3 class="font-semibold text-slate-800">Month-End Checklists</h3>
+                            <p class="text-xs text-slate-500">Live operational trackers stored in Microsoft Teams.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Searchable Knowledge Cards (SAP Fixes & Escalation Contacts) -->
+            <section id="knowledgeCards">
+                <h2 class="text-lg font-bold text-slate-900 mb-4">💡 Knowledge & Troubleshooting Base</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    
+                    <!-- Card 1 -->
+                    <div class="knowledge-item bg-white p-5 rounded-xl shadow-sm border border-slate-200 space-y-3">
+                        <span class="inline-block bg-amber-50 text-amber-700 px-2.5 py-1 rounded text-xs font-semibold">SAP Error Fix</span>
+                        <h3 class="font-bold text-slate-900 card-title">F5 102 - Balanced/Unbalanced Ledger</h3>
+                        <p class="text-sm text-slate-600">Occurs during journal clearing. Ensure document types map to your cost elements correctly before submitting.</p>
+                        <a href="https://sharepoint.com" target="_blank" class="inline-block text-xs font-medium text-blue-600 hover:underline">View Step-by-Step Resolution →</a>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="knowledge-item bg-white p-5 rounded-xl shadow-sm border border-slate-200 space-y-3">
+                        <span class="inline-block bg-amber-50 text-amber-700 px-2.5 py-1 rounded text-xs font-semibold">SAP Error Fix</span>
+                        <h3 class="font-bold text-slate-900 card-title">M3 305 - Material Master Locked</h3>
+                        <p class="text-sm text-slate-600">The record is actively open by another batch job. Wait 5 minutes or contact Master Data support.</p>
+                        <a href="#" class="inline-block text-xs font-medium text-blue-600 hover:underline">View Step-by-Step Resolution →</a>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="knowledge-item bg-white p-5 rounded-xl shadow-sm border border-slate-200 space-y-3">
+                        <span class="inline-block bg-purple-50 text-purple-700 px-2.5 py-1 rounded text-xs font-semibold">Escalation Contact</span>
+                        <h3 class="font-bold text-slate-900 card-title">Intercompany Out-of-Balance Issues</h3>
+                        <p class="text-sm text-slate-600">If variance exceeds $10k during Day -1 close, contact the Global Consolidation desk immediately.</p>
+                        <p class="text-xs font-medium text-slate-500">Contact: team-rtr-leads@company.com</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="knowledge-item bg-white p-5 rounded-xl shadow-sm border border-slate-200 space-y-3">
+                        <span class="inline-block bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded text-xs font-semibold">Month-End Dates</span>
+                        <h3 class="font-bold text-slate-900 card-title">WD1 to WD5 Reporting Schedule</h3>
+                        <p class="text-sm text-slate-600">Deadlines for ledger locks, intercompany matches, and final variance commentary timelines.</p>
+                        <a href="#" class="inline-block text-xs font-medium text-blue-600 hover:underline">Open Schedule Spreadsheet →</a>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- Right 1 Column: Onboarding Progress Tracker & Feedback Form -->
+        <div class="space-y-8">
+            
+            <!-- Onboarding Progress Checklist Component -->
+            <section class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <h2 class="text-lg font-bold text-slate-900 mb-2">🏁 Onboarding Progress</h2>
+                <p class="text-xs text-slate-500 mb-4">Track your tasks here locally. Resets upon browser reload.</p>
+                
+                <div class="space-y-3">
+                    <label class="flex items-start gap-3 p-2 hover:bg-slate-50 rounded transition-colors cursor-pointer">
+                        <input type="checkbox" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                        <span class="text-sm text-slate-700">Access corporate SharePoint & Teams channel</span>
+                    </label>
+                    <label class="flex items-start gap-3 p-2 hover:bg-slate-50 rounded transition-colors cursor-pointer">
+                        <input type="checkbox" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                        <span class="text-sm text-slate-700">Configure SAP GUI profiles & system environments</span>
+                    </label>
+                    <label class="flex items-start gap-3 p-2 hover:bg-slate-50 rounded transition-colors cursor-pointer">
+                        <input type="checkbox" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                        <span class="text-sm text-slate-700">Review Month-End WD-1 balancing guide</span>
+                    </label>
+                    <label class="flex items-start gap-3 p-2 hover:bg-slate-50 rounded transition-colors cursor-pointer">
+                        <input type="checkbox" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                        <span class="text-sm text-slate-700">Submit baseline check documentation to mentor</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Feedback & Continuous Improvement Form -->
+            <section class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <h2 class="text-lg font-bold text-slate-900 mb-1">📢 Hub Improvement Form</h2>
+                <p class="text-xs text-slate-500 mb-4">Did a link break? Is an error missing? Tell us so we can fix it.</p>
+                
+                <form id="feedbackForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">What needs to be added or fixed?</label>
+                        <textarea required rows="3" placeholder="Example: The SAP Error M3 305 guide link is missing its password step..." class="w-full text-sm p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50"></textarea>
+                    </div>
